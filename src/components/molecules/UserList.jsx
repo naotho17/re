@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { useGetUserdata } from "../../hooks/useGetUserdata";
 
 export const UserList = () => {
-  const { getUsers, users, setUsers } = useGetUserdata();
+  const { getUsers, users } = useGetUserdata();
   useEffect(() => getUsers(), []);
-
   console.log(users);
 
+  // ここで取ってきた配列を処理していく
   return (
     <Sdl>
       <dt>name:</dt>
