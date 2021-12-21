@@ -9,7 +9,6 @@ export const UserList = () => {
   // ここで取ってきた配列を処理していく
   return (
     <>
-      {console.log(users)}
       <h1>ユーザ一覧</h1>
       <ul>
         {users.map((user) => {
@@ -31,4 +30,5 @@ const Sh2 = styled.h2`
 
 const Sp = styled.p`
   color: green;
+  margin-bottom: 10px;
 `;
