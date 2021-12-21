@@ -1,4 +1,4 @@
-// axiosを使って情報をとってくるhooks
+// axiosを使ってユーザー情報をとってくるhooks
 
 import axios from "axios";
 import { useCallback, useState } from "react";

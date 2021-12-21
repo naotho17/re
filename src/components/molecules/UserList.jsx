@@ -5,26 +5,30 @@ import { useGetUserdata } from "../../hooks/useGetUserdata";
 export const UserList = () => {
   const { getUsers, users } = useGetUserdata();
   useEffect(() => getUsers(), []);
-  console.log(users);
 
   // ここで取ってきた配列を処理していく
   return (
-    <Sdl>
-      <dt>name:</dt>
-      <dd>naotho</dd>
-      <dt>username:</dt>
-      <dd>naotho17</dd>
-      <dt>email:</dt>
-      <dd>123@gmail.com</dd>
-      <dt>address:</dt>
-      <dd>tokyo 1-10-100</dd>
-    </Sdl>
+    <>
+      {console.log(users)}
+      <h1>ユーザ一覧</h1>
+      <ul>
+        {users.map((user) => {
+          return (
+            <li key={user.id}>
+              <Sh2>{user.name}</Sh2>
+              <Sp>{user.email}</Sp>
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 };
+const Sh2 = styled.h2`
+  font-size: 20px;
+  font-weight: bold;
+`;
 
-const Sdl = styled.dl`
-  margin-top: 10px;
-  dt {
-    float: left;
-  }
+const Sp = styled.p`
+  color: green;
 `;
